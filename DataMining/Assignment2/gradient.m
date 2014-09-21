@@ -1,3 +1,6 @@
+% this function contains the main file.
+% it implenets simple linear regression
+
 function  gradient()
     
 	maxiter=100;
