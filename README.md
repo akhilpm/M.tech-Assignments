@@ -1,4 +1,4 @@
 M.tech-Assignments
 ==================
 
-The assignments that i have done during my masters
+The assignments that i did during my masters
