@@ -1,0 +1,552 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default  Margins
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage[framed]{mcode}
+%\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{framed}
+%\usepackage{tcolorbox}
+\definecolor{shadecolor}{RGB}{180,180,180}
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+%\lhead{\hmwkAuthorName} % Top left header
+%\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+%\rhead{\firstxmark} % Top right header
+%\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{ \thepage\ } % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{} % Header and footer within the environment
+}{
+\exitProblemHeader{} % Header and footer after the environment
+}
+
+%\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+%\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+%}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{} % Header and footer within the environment
+}{
+\enterProblemHeader{} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Assignment\ \#3} % Assignment title
+%\newcommand{\hmwkDueDate}{Monday,\ January\ 1,\ 2012} % Due date
+%\newcommand{\hmwkClass}{BIO\ 101} % Course/class
+%\newcommand{\hmwkClassTime}{10:30am} % Class/lecture time
+%\newcommand{\hmwkClassInstructor}{Jones} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Akhil P M (SC14M044)} % Your name
+
+\newcommand{\tab}[1]{\hspace{.1\textwidth}\rlap{#1}}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\textsc{Indian Institute of Space Science and Technology Thiruvananthapuram} \\ [25pt]
+\vspace{2in}
+\textmd{\textbf{\hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ 08-10-2014}\\
+%\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}[\textbf{1.Data Set 1}]
+
+\begin{homeworkSection}{\textbf{1.1 Logistic Regression}}
+\begin{snugshade*}
+model parameters\\
+ Weight values 
+   -0.0931   -0.3633   -0.3034
+
+$\alpha$ value :0.01 
+\end{snugshade*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{logistic}
+	\caption{Logistic Regression}
+\end{figure}
+The ROC curve of Logistic Regression is shown below
+\begin{figure}[H]
+	\centering
+	\includegraphics{ROCdata1}
+	\caption{ROC curve for Logistic Regression}
+\end{figure}
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{1.2 Gaussian Discriminant Analysis}}
+ 
+The model parameters are$\colon$\\
+\begin{snugshade*}
+Mean of Positive Class = -0.1709   \tab{-0.0055}\\
+Mean of Negative Class =  4.0029   \tab{3.9501}\\
+
+Covariance\\
+    5.6964    \tab{4.1731}\\
+    4.1731    \tab{5.0065}\\
+
+\end{snugshade*}
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{1.3 Naive Bayes Classifier}}
+
+Here the parameters of the model are $\Phi$ values\\
+\begin{snugshade*}
+$\Phi$($\colon$,$\colon$,1) =\\
+    0.2000    \tab{0.1143}\\
+    0.6286    \tab{0.7714}\\
+    0.1714    \tab{0.1143}\\
+         0         \tab{0}\\
+         0         \tab{0}\\
+
+$\Phi$($\colon$,$\colon$,2) =\\
+         0         \tab{0}\\
+         0         \tab{0}\\
+    0.1714    \tab{0.2286}\\
+    0.6286    \tab{0.5429}\\
+    0.2000    \tab{0.2286}\\
+
+\end{snugshade*}
+
+\end{homeworkSection}
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{2.Haberman's Survival Data Set}]
+
+\begin{homeworkSection}{\textbf{2.1 Logistic Regression}}
+
+The parameters of the model are 
+
+\begin{snugshade*}
+ Weight values \\
+    0.6705 \tab{0.67050}  \tab{0.0258}
+
+$\alpha$ value$\colon$ 0.01\\
+\end{snugshade*}
+
+The ROC-curve obtained is shown below
+\begin{figure}[H]
+	\centering
+	\includegraphics{ROCdata2Logistic}
+	\caption{Logistic Regression ROC curve}
+\end{figure}
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{2.2 Gaussian Discriminant Analysis}}
+
+The model parameters are$\colon$\\
+\begin{snugshade*}
+Mean of positive class = 47.0181   \tab{62.6265}    \tab{2.9639}\\
+Mean of negative class = 48.5172   \tab{63.1034}    \tab{8.3793}\\
+Covariance\\
+   55.4441    \tab{1.8464}    \tab{1.4201}\\
+    1.8464   \tab{10.3229}    \tab{0.3520}\\
+    1.4201    \tab{0.3520}   \tab{56.0089}\\
+\end{snugshade*}
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{2.3 Naive Bayes Classifier}}
+
+Here the parameters of the model are $\Phi$ values\\
+\begin{snugshade*}
+$\Phi$($\colon$,$\colon$,1) =\\
+
+    0.2169    \tab{0.0058}    \tab{0.8253}\\
+    0.3434    \tab{0.1867}    \tab{0.0843}\\
+    0.4398    \tab{0.5241}    \tab{0.0422}\\
+    \tab{0}    \tab{0.2892}    \tab{0.0241}\\
+    0.0058    \tab{0.0058}    \tab{0.0241}\\
+
+
+$\Phi$($\colon$,$\colon$,2) =\\
+
+    0.0690    \tab{0.0159} 	  \tab{0.4655}\\
+    0.4655    \tab{0.2414}    \tab{0.2069}\\
+    0.4483    \tab{0.3793}    \tab{0.1379}\\
+    0.0172    \tab{0.3793}    \tab{0.0517}\\
+    0.0159    \tab{0.0159}    \tab{0.1379}\\
+\end{snugshade*}
+
+The ROC-curve obtained for Naive Bayes Classifier is shown below\\
+\begin{figure}[H]
+	\centering
+	\includegraphics{ROCdata2naive}
+	\caption{Naive Bayes ROC curve}
+\end{figure}
+
+\end{homeworkSection}
+
+The preprocessing that i did on the data are\\
+1.\textbf{adding bias to the feature matrix X(for logistic regression)}.\\
+it is done as follows 
+\begin{lstlisting}
+	[m n] = size(X);
+	X = [ones(m,1) X];
+\end{lstlisting}
+
+2.\textbf{Attribute Discretizing(for Naive Bayes Classifier)}\\
+Naive Bayes Classifier cannot work with continuous valued attributes,so attributes are to be discretized before the classification starts.The code that performs attribue discretization is shown below.
+\lstinputlisting{AttributeDiscretizer.m}{\centerline{1.Attribute Discretizing}}
+
+3.\textbf{Feature scaling}\\
+The basic idea of feature scaling is to make sure that features are on a similiar scale. This will in 
+turn results in faster convergence of gradient descent\cite{ang}. The common technique is to make every feature in the range 0$\leq X_i \leq$1. Feature scaling for a vector x is done as follows
+\[x_i = \frac{x_i-min(x)}{max(x)-min(x)}\]
+
+Feature scaling is only applied for logistic regression with the second data set.The code that performs the feature scaling is shown below.
+\lstinputlisting{featureScale.m}{\centerline{2.Feature Scaling}}
+
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}[\textbf{3.Performance Comparison}]
+
+Logistic regression gives poor results on data set 1.\\
+
+\begin{snugshade*}
+no of test datasets :30\\
+no of misclassifications :10\\
+accuracy :0.667\\
+precision :1.000\\
+recall/sensitivity :0.333\\
+F-Measure :0.500\\
+\end{snugshade*}
+
+GDA gives 100\% classification accuracy on data set 1.\\
+
+\begin{snugshade*}
+no of test datasets :30\\
+no of misclassifications :0\\
+accuracy :1.000\\
+precision :1.000\\
+recall/sensitivity :1.000\\
+F-Measure :1.000\\
+\end{snugshade*}
+
+Naive Bayes Classifier also give a good performance on data set 1.\\
+
+\begin{snugshade*}
+no of test datasets :30\\
+no of misclassifications :1\\
+accuracy :0.967\\
+precision :1.000\\
+recall/sensitivity :0.933\\
+F-Measure :0.966\\
+\end{snugshade*}
+
+The results for Haberman`s survival data set is as shown below.\\
+
+Logistic Regression gives best result for classification of these data set
+
+\begin{snugshade*}
+no of test datasets :82\\
+no of misclassifications :0\\
+accuracy :1.000\\
+precision :1.000\\
+recall/sensitivity :1.000\\
+F-Measure :1.000\\
+\end{snugshade*}
+
+GDA also performs well in case of second data set.\\
+
+\begin{snugshade*}
+no of test datasets :82\\
+no of misclassifications :4\\
+accuracy :0.932\\
+precision :1.000\\
+recall/sensitivity :0.932\\
+F-Measure :0.965\\
+\end{snugshade*}
+
+But Naive Bayes classifier is giving poor performance on this data set\\
+
+\begin{snugshade*}
+no of test datasets :82\\
+no of misclassifications :46\\
+accuracy :0.220\\
+precision :1.000\\
+recall/sensitivity :0.220\\
+F-Measure :0.361\\
+\end{snugshade*}
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{4.Decision Boundaries}]
+1.Logistic Regression Decision Boundary
+\begin{figure}[H]
+	\centering
+	\includegraphics{logistic1DB}
+	\caption{Logistic Regression Data 1}
+	\includegraphics{logistic2DB}
+	\caption{Logistic Regression Data 2}
+\end{figure}	
+
+2.GDA Decision Boundary
+\begin{figure}[H]
+	\centering
+	\includegraphics{gda1DB}
+	\caption{GDA}
+\end{figure}
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{5.Density Function and Contours}]
+1.Multi Variate Gaussian Density Function for Data 1
+\begin{figure}[H]
+	\centering
+	\includegraphics{density}
+	\caption{Multi Variate Gaussian Density Function}
+\end{figure}
+
+2.Contours for Data 1
+\begin{figure}[H]
+	\centering
+	\includegraphics{contour}
+	\caption{Contours of Data 1}
+\end{figure}
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{6.ANOVA and Students t Distribution}]
+
+\textbf{ANOVA}
+Analysis of Variance (ANOVA) is a statistical method used to test differences between two or more means. It may seem odd that the technique is called ''Analysis of Variance'' rather than ''Analysis of Means.'' The name is appropriate because inferences about means are made by analyzing variance.
+
+When we have only two samples we can use the t-test to compare the means of the samples but it might become unreliable in case of more than two samples. If we only compare two means, then the t-test (independent samples) will give the same results as the ANOVA\cite{anova}.
+
+The ANOVA test makes the following assumptions about the data in X$\colon$
+\begin{itemize}
+	\item All sample populations are normally distributed.
+	\item All sample populations have equal variance.
+	\item All observations are mutually independent.
+\end{itemize}
+The ANOVA test is known to be robust with respect to modest violations of the first two assumptions.
+
+The ANOVA test returns a measure called p-value.If p is near zero, it casts doubt on the null hypothesis and suggests that at least one sample mean is significantly different than the other sample means.ANOVA`s use an F-ratio as its significance statistic which is variance because it is impossible to calculate the sample means difference with more than two samples\cite{anova2}.
+
+T-tests are easier to conduct, so why not conduct a t-test for the possible interactions in the experiment? A Type I error is the answer because the more hypothesis tests you use the more you risk making a type I error and the less power a test has. There is no disputing the t-test changed statistics with its ability to find significance with a small sample, but as previously mentioned the ANOVA allowed for testing more than 2 means. ANOVA`s are used a lot professionally when testing pharmaceuticals and therapies.
+
+\textbf{ANOVA result for Data1}$\colon$
+p=0.9601\\
+P is greater than significance level, hence the means are almost same.It can be analyzed from the boxplot also.Hence null hypothesis is accepted\\
+\begin{figure}[H]
+	\centering
+	\includegraphics{ANOVAdata1}
+	\caption{Box plot for data1}
+\end{figure}
+\textbf{ANOVA result for Haberman`s survival data set}$\colon$
+p =0\\
+since P is a small value we reject the null hypothesis.ie,atleast one of the mean is significantly different from all other means.The boxplot also gives the same result.\\
+\begin{figure}[H]
+	\centering
+	\includegraphics{ANOVAdata2}
+	\caption{Box plot for Data2}
+\end{figure}
+
+\textbf{T Distribution}\\
+The t distribution (or, Student`s t-distribution) is a probability distribution that is used to estimate population parameters when the sample size is small and/or when the population variance is unknown.It is a type of probability distribution that is theoretical and resembles a normal distribution. A T distribution differs from the normal distribution by its degrees of freedom. The higher the degrees of freedom, the closer that distribution will resemble a standard normal distribution with a mean of 0, and a standard deviation of 1.\\
+
+According to the central limit theorem, the sampling distribution of a statistic (like a sample mean) will follow a normal distribution, as long as the sample size is sufficiently large. Therefore, when we know the standard deviation of the population, we can compute a z-score, and use the normal distribution to evaluate probabilities with the sample mean\cite{ttest}.\\
+
+But sample sizes are sometimes small, and often we do not know the standard deviation of the population. When either of these problems occur, statisticians rely on the distribution of the t statistic (also known as the t score), whose values are given by$\colon$
+\[ \frac{\overline{x}-\mu}{s/\sqrt{n}} \]
+where $\overline{x}$ is the sample mean,$\mu$ is the population mean,s is the standard deviation of the sample, and n is the sample size.\\ 
+
+There are actually many different t distributions. The particular form of the t distribution is determined by its degrees of freedom. The degrees of freedom refers to the number of independent observations in a set of data.The t distribution has the following properties$\colon$
+\begin{itemize}
+\item The mean of the distribution is equal to 0.
+\item The variance is equal to $\frac{v}{(v-2)}$, where v is the degrees of freedom and v$\geq$2.
+\item The variance is always greater than 1, although it is close to 1 when there are many degrees of freedom. With infinite degrees of freedom, the t distribution is the same as the standard normal distribution.
+\end{itemize}
+The t distribution can be used with any statistic having a bell-shaped distribution (i.e., approximately normal). The t distribution should not be used with small samples from populations that are not approximately normal\cite{ttest}.\\\\
+
+The result of the t-test for DATA 1 is [1 1],hence it rejects the null hypothesis at the 5\% significance level.\\T-test for Haberman`s survival data set gives the result as [1 1 1], and hence it also rejects the null hypothesis.\\
+Thus T-test rejects null hypothesis for both the data sets,but ANOVA rejects null hypothesis for the second data set only.
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{7.Spam Classification Problem}]
+
+The dictionary for this problem can be constructed as\\ \\
+\begin{tabular}{|l|l|l|l|}
+
+	\textbf{word} & \textbf{total} & \textbf{+ve} &\textbf{-ve}\\
+	send & 4 & 3 & 1\\
+	us & 4 & 3 & 1\\
+	your & 5 & 3 & 2\\
+	internet & 3 & 2 & 1\\
+	banking & 3 & 2 & 1\\
+	password & 3 & 2 & 1\\
+	review & 3 & 1 & 2\\
+	account & 1 & 1 & 0\\
+	details & 1 & 1 & 0\\
+
+\end{tabular}\\ \\
+
+The prior probabilities are\\ 
+P(spam)=$\frac{2}{3}$ and \\
+P(ham)=$\frac{1}{3}$\\
+
+Now consider the first mail - ''Review your account'' denote is as $T_1$\\
+Applying Naive bayes classification techniques,\\
+
+P(spam/$T_1$) = P(spam)*P($T_1$/spam)\\
+	 \tab{=$\frac{2}{3}$*$\frac{1}{3}$*$\frac{3}{5}$*1=$\frac{2}{15}$}\\
+P(ham/$T_1$) = P(ham)*P($T_1$/ham)\\
+	 \tab{=$\frac{1}{3}$*$\frac{2}{3}$*$\frac{2}{5}$*0=0}\\
+
+\textbf{Hence P(spam/$T_1$) >  P(ham/$T_1$).}\\
+\textbf{So the given mail might be a spam.}\\
+
+consider the second mail - ''Review us now'' denote is as $T_2$\\
+Here the word ''now'' is not present either in the positive or negative class.So we have to perform Laplace
+smoothing first.
+
+P(now in +ve class) =$\frac{1}{4+9}$ = $\frac{1}{13}$\\
+P(now in -ve class) =$\frac{1}{2+9}$ = $\frac{1}{11}$\\
+
+ P(spam/$T_2$) = P(spam)*P($T_2$/spam)\\
+	 \tab{=$\frac{2}{3}$*$\frac{1}{3}$*$\frac{3}{4}$*$\frac{1}{13}$=$\frac{1}{78}$}\\
+P(ham/$T_2$) = P(ham)*P($T_2$/ham)\\
+	 \tab{=$\frac{1}{3}$*$\frac{2}{3}$*$\frac{1}{4}$*$\frac{1}{11}$=$\frac{1}{198}$}\\
+
+\textbf{Hence P(spam/$T_2$) >  P(ham/$T_2$).}\\
+\textbf{So the given mail might be a spam.}\\
+
+
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{thebibliography}{9}
+
+\bibitem{ang}
+ 	Machine Learning - Coursera,
+ 	\emph{https://class.coursera.org/ml-005/lecture?lecture\_player=html5}
+
+\bibitem{anova}	
+	\emph{http://www.mathworks.in/help/stats/anova1.html}
+
+\bibitem{anova2}
+	\emph{http://www.nku.edu/~statistics/Analysis_of_Variance_Example.htm}
+
+\bibitem{ttest}
+	\emph{http://pages.uoregon.edu/aarong/teaching/G4074_Outline/node23.html}
+
+\end{thebibliography}
+
+
+\end{document}
