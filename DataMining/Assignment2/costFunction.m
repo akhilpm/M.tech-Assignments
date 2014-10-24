@@ -1,4 +1,8 @@
+
 function [jval,grad] = costFunction(X,T,y)
+
+    %debug_on_warning(1);
+    %debug_on_error(1);
 
 	[m,n]=size(X);
 	jval=0.0;
