@@ -19,7 +19,7 @@ function [jval,grad] = costFunction(X,T,y)
 	jval=-jval/m;
 
 	for jj=1:n,
-		for ij=1:m,
+		for ii=1:m,
 			grad(jj)=grad(jj)+(hyp(ii)-y(ii))*X(ii,jj);  % h(x^(i)-y(i))*x[i][j] = grad(j)
 		end;
 		grad(jj)=grad(jj)/m;
