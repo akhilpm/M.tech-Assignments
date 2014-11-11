@@ -1,0 +1,371 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+%\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default  Margins
+%\usepackage{cite}
+\usepackage{hyperref}
+%\usepackage[framed]{mcode}
+%\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{framed}
+%\usepackage{tcolorbox}
+\definecolor{shadecolor}{RGB}{180,180,180}
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+%\lhead{\hmwkAuthorName} % Top left header
+%\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+%\rhead{\firstxmark} % Top right header
+%\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{ \thepage\ } % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{} % Header and footer within the environment
+}{
+\exitProblemHeader{} % Header and footer after the environment
+}
+
+%\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+%\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+%}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{} % Header and footer within the environment
+}{
+\enterProblemHeader{} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Assignment\ \#4} % Assignment title
+%\newcommand{\hmwkDueDate}{Monday,\ January\ 1,\ 2012} % Due date
+%\newcommand{\hmwkClass}{BIO\ 101} % Course/class
+%\newcommand{\hmwkClassTime}{10:30am} % Class/lecture time
+%\newcommand{\hmwkClassInstructor}{Jones} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Akhil P M (SC14M044)} % Your name
+
+\newcommand{\tab}[1]{\hspace{.1\textwidth}\rlap{#1}}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\textsc{Indian Institute of Space Science and Technology Thiruvananthapuram} \\ [25pt]
+\vspace{2in}
+\textmd{\textbf{\hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ 05-11-2014}\\
+%\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}[\textbf{1.Ridge Regression}]
+
+\begin{homeworkSection}{\textbf{1.1 2nd degree polynomial fitting }}
+$\lambda$ v/s training \& validation error.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{xpow2fit}
+	\caption{fitting 2nd degree polynomial}
+\end{figure}
+
+Plot of J\_reg(W) 
+\begin{figure}[H]
+	\centering
+	\includegraphics{jregwPow2}
+	\caption{J(W) v/s iterations}
+\end{figure}
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{1.2 3rd degree polynomial fitting }}
+$\lambda$ v/s training \& validation error.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{xpow3fit}
+	\caption{fitting 3rd degree polynomial}
+\end{figure}
+Plot of J\_reg(W) 
+\begin{figure}[H]
+	\centering
+	\includegraphics{jregwPow3}
+	\caption{J(W) v/s iterations}
+\end{figure}
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{1.3 7th degree polynomial fitting }}
+$\lambda$ v/s training \& validation error.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{xpow7fit}
+	\caption{fitting 7th degree polynomial}
+\end{figure}
+Plot of J\_reg(W) 
+\begin{figure}[H]
+	\centering
+	\includegraphics{jregwPow7}
+	\caption{J(W) v/s iterations}
+\end{figure}
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{1.4 Performance Comparisons }}
+
+best model with 2nd degree polynomial $\colon$ $\lambda$=0.10 test error estimated=1.2096\\
+best model with 3rd degree polynomial $\colon$ $\lambda$=0.40 test error estimated=1.1777\\
+best model with 7th degree polynomial $\colon$ $\lambda$=2.00 test error estimated=1.1389\\
+performance of the least square method $\colon$ 1.4270 
+
+Thus 7th degree polynomial gives the best fit for the data.
+\end{homeworkSection}
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{2.Regularised linear regression}]
+
+Weight values(without regularisation) 
+   $\theta_0$ = 11.6506  $\theta_1$ = -1.7925 $\theta_2$ = 4.4062 
+   $\theta_3$ = -1.6779 $\theta_4$ = 4.1600 $\theta_5$ = -0.5733 $\theta_6$ = 16.4432 
+   $\theta_7$ = 1.6647 $\theta_8$ = 0.3262 $\theta_9$ = 0.9794 $\theta_{10}$ = -2.1768
+   $\theta_{11}$ = -4.6693 $\theta_{12}$ = 8.5775 $\theta_{13}$ = -10.4561 \\
+
+Weight values(with regularisation) 
+   $\theta_0$ = 11.9142  $\theta_1$ = -1.8099 $\theta_2$ = 4.4106 
+   $\theta_3$ = -1.6696 $\theta_4$ = 4.1478 $\theta_5$ = -0.5509 $\theta_6$ = 15.9588 
+   $\theta_7$ = 1.7438 $\theta_8$ = 0.3979 $\theta_9$ = 0.9771 $\theta_{10}$ = -2.1800
+   $\theta_{11}$ = -4.6242 $\theta_{12}$ = 8.5004 $\theta_{13}$ = -10.6712 \\
+
+cost witout regularisation$\colon$8.37 \\
+cost with regularisation$\colon$8.20 \\
+$\alpha$ value $\colon$0.500000 \\
+$\lambda$ value $\colon$0.10 \\
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{3.K-nearest neighbourhood}]
+
+no of test datasets$\colon$209 \\
+no of folds$\colon$5 \\
+no of misclassifications$\colon$69 \\
+accuracy$\colon$0.670 \\
+precision$\colon$0.462 \\
+recall/sensitivity$\colon$0.369 \\
+F-Measure$\colon$0.410 \\
+Max accuracy during cross validation$\colon$0.617 \\
+optimum K value$\colon$25\\
+
+The ROC-curve obtained is shown below
+\begin{figure}[H]
+	\centering
+	\includegraphics{ROCpgm3withK25}
+	\caption{ROC curve for k=25}
+\end{figure}
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{4.Decision Tree in WEKA}]
+
+=== Evaluation on test split === \\
+
+Correctly Classified Instances$\colon$5584 (85.7494\%) \\
+Incorrectly Classified Instances$\colon$928 (14.2506\%) \\
+Kappa statistic$\colon$0.5732 \\
+K\&B Relative Info Score$\colon$288671.6144 \\
+K\&B Information Score$\colon$2308.5563 bits \tab{0.3545 bits/instance}\\
+Class complexity | order 0 $\colon$ 5100.5935 bits \tab{0.7833 bits/instance}\\
+Class complexity | scheme $\colon$ 40494.5293 bits \tab{6.2184 bits/instance}\\
+Complexity improvement(Sf)$\colon$-35393.9358 bits \tab{-5.4352 bits/instance}\\
+Mean absolute error$\colon$0.1917 \\
+Root mean squared error$\colon$0.3191 \\
+Relative absolute error$\colon$52.867\% \\
+Root relative squared error$\colon$75.4903\% \\
+Total Number of Instances$\colon$6512 \\    
+
+=== Detailed Accuracy By Class ===\\ \\
+\begin{tabular}{|l|l|l|l|l|l|l|}
+	\hline
+	\textbf{TP Rate} & \textbf{FP Rate} & \textbf{Precision} &\textbf{Recall} &\textbf{F\-Measure} &\textbf{ROC Area} &\textbf{Class}\\
+    0.936 & 0.4 & 0.885 & 0.936 & 0.91 & 0.89 & <=50K\\
+    0.6 & 0.064 & 0.739 & 0.6 & 0.662 & 0.89 & >50K\\
+    \hline
+    \multicolumn{7}{|c|}{Weighted Avg}\\
+    \hline
+    0.857 & 0.322 & 0.851 & 0.857 & 0.852 & 0.89 & -\\ 
+    \hline
+\end{tabular}\\ \\
+=== Confusion Matrix ===\\ \\
+\begin{tabular}{|l|l|}
+	\hline
+	\textbf{Class<=50k} & \textbf{Class>50k}\\
+	4674 & 322\\
+  	606 & 910\\
+  	\hline
+\end{tabular}\\ \\
+
+\textbf{The Complete set of results with the obtained decision tree is accessible in this \href{https://github.com/akhilpm/M.tech-Assignments/blob/master/DataMining/Assignment4/wekaDecisionTree.txt}{link}}(since it is around 1000 lines it is not included here)
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{5.Problem on Apriori Algorithm}]
+Support counts of individuals\\ \\
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+	M & O & N & K & E & Y & D & A & U & C & I\\
+	\hline
+	3 & 4 & 2 & 5 & 4 & 3 & 1 & 1 & 1 & 2 & 1\\
+	\hline
+\end{tabular}\\ \\
+
+Since Min.Support is 3(60\%) we form L1 as\\ \\
+\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	M & O & K & E & Y\\
+	\hline
+	3 & 4 & 5 & 4 & 3\\ 
+	\hline
+\end{tabular}\\ \\
+
+Then C2 is formed as shown below\\ \\
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+	{M,O} & {M,K} & {M,E} & {M,Y} & {O,K} & {O,E} & {O,Y} & {K,E} & {K,Y} & {E,Y}\\
+	\hline
+	1 & 3 & 2 & 2 & 4 & 4 & 2 & 4 & 3 & 2\\
+	\hline
+\end{tabular}\\ \\
+
+L2 obtained is\\ \\
+\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	{M,K} & {O,K} & {O,E} & {K,E} & {K,Y}\\
+	\hline
+	3 & 4 & 4 & 4 & 3\\ 
+	\hline
+\end{tabular}\\ \\
+
+Then C3 is formed as shown below\\
+\begin{tabular}{|l|}
+	\hline
+	{M,K,E}\\
+	\hline
+	4\\
+	\hline
+\end{tabular}\\ \\
+
+C3 is same as L3 since its support count is 4(>=3).\\
+The rules formed are
+\begin{snugshade*}
+	\{O,K\} $\Longrightarrow$ E\\
+	\{O,E\} $\Longrightarrow$ K\\
+	\{K,E\} $\Longrightarrow$ O\\
+\end{snugshade*}
+
+$\frac{O,K,E}{O,K}$ = $\frac{4}{4}$ = 1\\
+$\frac{O,K,E}{O,E}$ = $\frac{4}{4}$ = 1\\
+$\frac{O,K,E}{K,E}$ = $\frac{4}{4}$ = 1\\
+\\
+since confidence >=80\%, all are strong associations
+\end{homeworkProblem}
+
+\end{document}
