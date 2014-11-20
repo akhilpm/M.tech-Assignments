@@ -15,7 +15,7 @@ function  naiveBayesClassifier()
 
 
 	postrain=find(trainY==1);
-	negtrain=find(trainY==2);
+	negtrain=find(trainY==0);
 	%postest=find(testY==1);
 	%negtest=find(testY==0);
 	class1=trainX(postrain,:);
@@ -43,7 +43,8 @@ function  naiveBayesClassifier()
 	[disc,classes]=AttributeDiscretizer(trainX,2); 
 	phi=zeros(classes,ntrain,2);
 	size(phi)
-
+	length(postrain)
+	length(negtrain)
 	%%%%% ESTIMATING PRIOR PROBABILITIES %%%%%%
 	prior(1)=length(postrain)/mtrain; % P(Y=1)
 	prior(2)=length(negtrain)/mtrain; % P(Y=0)
@@ -57,7 +58,7 @@ function  naiveBayesClassifier()
 
 				if(trainY(ii)==1 && disc(ii,jj)==k),
 					indpos=indpos+1;	
-				elseif(trainY(ii)==2 && disc(ii,jj)==k),
+				elseif(trainY(ii)==0 && disc(ii,jj)==k),
 					indneg=indneg+1;
 				end;	
 

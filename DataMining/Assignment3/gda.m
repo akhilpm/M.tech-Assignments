@@ -5,11 +5,11 @@
 
 function gda()
 
-	trainX=csvread('dataTrain.csv');
+	trainX=csvread('habermanTrain.csv');
 	[m, n]=size(trainX);
 	trainY=trainX(:,n);
 	trainX(:,n)=[];
-	testX=csvread('dataTest.csv');
+	testX=csvread('habermanTest.csv');
 	testY=testX(:,n);
 	testX(:,n)=[];	
 	[mtrain, ntrain]=size(trainX);

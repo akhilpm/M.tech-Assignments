@@ -4,93 +4,123 @@ function  gradient()
     %debug_on_warning(1);
     %debug_on_error(1);
 
-	alpha1=0;
+	maxiter=30;
+	alpha=0;
 	epsilon=1e-5;
 	jval=0.0;
 	k=4;
-	X=csvread('data1.csv');
+	X=csvread('dataTrain.csv');
     %X(randperm(size(X,1)),:);  % randomize  the elements of matrix X
 
 	[m,n]=size(X);
 	bias=ones(m,1);
 	X=[bias X];   % adding bias to the X matrix
 	[m,n]=size(X);
+	Y = X(:,n);
 	%pos=find(Y==1); 
 	%neg=find(Y==0);
-	Y = X(:,n);
 	X(:,n)=[];
 	%ThetaFixed=ones(1,n-1);
 	%plotDecisionBoundary(ThetaFixed, X, Y);
 	%X=featureScale(X);
 	X=[X Y];
     [m,n]=size(X);
-    set1=cvpartition(m,'holdout',0.3);
-    XIP=X(training(set1),:);
-    TEST=X(test(set1),:);
-    m=size(XIP,1);
+	ThetaFixed=zeros(1,n-1);
 
-
-	set2=cvpartition(m,'kfold',k);
+	set=cvpartition(m,'kfold',k);
 	t=0;
 	gmin=zeros(1,10);
-	cost1=zeros(1,50);
-	allData=zeros(10,2);
-	count=1;
+	optalpha=zeros(1,10);
+	cost=zeros(1,50);
 
 	for l=.1:0.1:1,
-
 		t=t+1;
-		alpha1=l;
-		err=zeros(1,k);
-
-
+		alpha=l;
+		TpermStore=zeros(k,n-1);
+		tsterror=zeros(1,k);
 		for ii=1:k,
+			err=zeros(1,k-1);
+			Tstore=zeros(k-1,n-1);
+            count=1;
+			for jj=1:k,
+                %ii
+				ip=X(training(set,jj),:);
+				op=ip(:,n);
+				ip(:,n)=[];
+				tstip=X(test(set,jj),:);
+				tstop=tstip(:,n);
+				tstip(:,n)=[];
+                %size(tstip)
+                %size(tstop)
+				T=zeros(1,n-1);
 
-			ip=XIP(training(set2,ii),:);
-			op=ip(:,n);
-			ip(:,n)=[];
-			tstip=XIP(test(set2,ii),:);
+				if(jj~=ii),
+					for kk=1:50,
+						[jval,grad]=costFunction(ip,T,op);
+						if jval<epsilon,
+							break;
+						end;
+						T=T-alpha*grad;
+					end;
+					err(count)=testSetError(tstip,T,tstop);
+					Tstore(count,:)=T;
+                    count=count+1;
+				end;
+			end;
+            %count
+            %err
+			[minjval,idx]=min(err);
+			Tmin=Tstore(idx,:);
+            %minjval
+			TpermStore(ii,:)=Tmin;
+			%errPerm(ii)=minjval;
+
+			tstip=X(training(set,ii),:);
 			tstop=tstip(:,n);
 			tstip(:,n)=[];
-            %size(tstip)
-            %size(tstop)
-			T=zeros(1,n-1);
-
-			for kk=1:50,
-				[jval,grad]=costFunction(ip,T,op);
-				if jval<epsilon,
-					break;
-				end;
-				T=T-alpha1*grad;
-			end;
-			err(ii)=testSetError(tstip,T,tstop);
-
+			jval=testSetError(tstip,Tmin,tstop);
+			tsterror(ii)=jval;
+			%jval
 		end;
 
-		meanError=mean(err);
-		allData(count,1)=alpha1;
-		allData(count,2)=meanError;
-		count=count+1;
-	
+		[minjval,idx]=min(tsterror);
+		gmin(t)=minjval;
+		%minjval
+		%alpha
+		%gminTheta(t,:)=TpermStore(idx,:);
+		%TpermStore(idx,:)
+		optalpha(t)=alpha;
 	end;
 
-	[minjval,idx]=min(allData(:,2));
-	alpha1=allData(idx,1);
+	[minjval,idx]=min(gmin);
+	alpha=optalpha(idx);
 	%alpha=0.01;
 
-	mtest=size(TEST,1);
-	tstop=TEST(:,n);
-	TEST(:,n)=[];
-	Theta=zeros(1,n-1);
+	ip=X;
+	%ip(50:100,:)=[];
+	op=ip(:,n);
+	ip(:,n)=[];
 
-	for kk=1:50,
-		[jval,grad]=costFunction(TEST,Theta,tstop);
-		cost1(kk)=jval;  %testSetError(TEST,Theta,tstop);;
-		if jval<epsilon,
-			break;
-		end;
-		Theta=Theta-alpha1*grad;
+	for jj=1:50,			
+			[jval,grad]=costFunction(ip,ThetaFixed,op);
+			cost(jj)=jval;
+			%jval			
+			if jval<epsilon,
+				break;
+			end;
+			ThetaFixed=ThetaFixed-alpha*grad;   % vectorised implementation
+			%ThetaFixed 
 	end;
+
+	%cost
+	X(:,n)=[];
+	plotDecisionBoundary(ThetaFixed, X, Y);
+	figure(3);
+    plot(1:50,cost);
+    xlabel('iterations');
+    ylabel('J(w)');
+    title('Convergence Status');
+	jval=testSetError(X,ThetaFixed,Y);
 
 	testX=csvread('dataTest.csv');
 	mtest=size(testX,1);
@@ -104,7 +134,7 @@ function  gradient()
 	hyp=zeros(mtest,1);	
 
 	for ii=1:mtest,
-		pred=Theta*testX(ii,:)';
+		pred=ThetaFixed*testX(ii,:)';
 		if(pred<0),
 			predictedClass=0;
 		else
@@ -126,15 +156,10 @@ function  gradient()
 
 	end;				
 
-
-	for ii=1:mtest,
-		fprintf('%d %d\n',ypred(ii),testY(ii));
-	end;	
-
-	sumTP=length(find(confMatrix==1));
-	sumFP=length(find(confMatrix==2));
-	sumFN=length(find(confMatrix==3));
-	sumTN=length(find(confMatrix==4));
+	sumTP=length(find(confMatrix==1))
+	sumFP=length(find(confMatrix==2))
+	sumFN=length(find(confMatrix==3))
+	sumTN=length(find(confMatrix==4))
 
 	accuracy=(sumTP+sumTN)/(sumTP+sumFP+sumFN+sumTN);
 	precision=sumTP/(sumTP+sumFP);
@@ -148,25 +173,6 @@ function  gradient()
 
     figure(2);
     plot(scores,hyp);
-
-
-	ip=X;
-	op=ip(:,n);
-	ip(:,n)=[];
-	Theta=zeros(1,n-1);
-
-	for jj=1:50,			
-		[jval,grad]=costFunction(ip,Theta,op);
-		if jval<epsilon,
-			break;
-		end;
-		Theta=Theta-alpha1*grad;   % vectorised implementation
-	end;
-
-    fprintf('model parameters\n Weight values\n');
-    disp(Theta);
-    fprintf('test data error:%0.2f\n',mean(cost1));
-    fprintf('alpha value :%f \n',alpha1);
     fprintf('no of test datasets :%d\n',mtest);
     fprintf('no of misclassifications :%d\n',sumFP+sumFN);
 	fprintf('accuracy :%.3f\n',accuracy);
@@ -174,7 +180,10 @@ function  gradient()
 	fprintf('recall/sensitivity :%.3f\n',recall);
 	fprintf('F-Measure :%.3f\n',fMeasure);
 
-	X(:,n)=[];
-	plotDecisionBoundary(Theta, X, Y);
+
+    fprintf('model parameters\n Weight values \n');
+    disp(ThetaFixed);
+    fprintf('alpha value :%f \n',alpha);
+    fprintf('model performance :%0.2f\n',jval);
 
 end

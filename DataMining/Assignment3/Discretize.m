@@ -25,15 +25,15 @@ function disc = Discretize(testRow,prob)
         val1=testRow(1);
         val2=testRow(2);
         val3=testRow(3);
-        if(val1>=30 && val1<40),
+        if(val1>=60 && val1<65),
             disc(1)=1;
-         elseif(val1>=40 && val1<50),
+         elseif(val1>=65 && val1<70),
             disc(1)=2;
-         elseif(val1>=50 && val1<60),
+         elseif(val1>=70 && val1<75),
             disc(1)=3;
-         elseif(val1>=60 && val1<70),
+         elseif(val1>=75 && val1<80),
             disc(1)=4;
-         elseif(val1>=70),
+         elseif(val1>=80),
             disc(1)=5;
         end;
         
