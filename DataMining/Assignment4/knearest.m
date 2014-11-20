@@ -2,8 +2,14 @@ function knearest()
 
 	X=load('breast-cancer-data.txt');
 	[m,n]=size(X);
+	Y=X(:,n);
+	X(:,n)=[];
+	X(:,1)=[];
+	n=n-1;
+	%X=featureScale(X);
+	X=[X Y];
 	k=5;
-	kvalues=[1,3,5,7,9,11,13,15,17,19,21,23,25];
+	kvalues=[1,2,3,5,7,9,11,13,15];
 	len=length(kvalues);
 	set1=cvpartition(m,'kfold',k);
 	avgAccuracy=zeros(len,1);
@@ -31,7 +37,7 @@ function knearest()
 				classes=zeros(kval,1);
 
 				for ll=1:trainlen,
-					distval(ll)=norm(tstip(kk)-ip(ll)); %getDistance(tstip(kk),ip(ll));
+					distval(ll)=norm(tstip(kk,:)-ip(ll,:)); %getDistance(tstip(kk),ip(ll));
 				end;
 
 				for ll=1:kval,
@@ -108,7 +114,7 @@ function knearest()
 		classes=zeros(kval,1);
 
 		for ll=1:trainlen,
-			distval(ll)=norm(tstip(kk)-ip(ll)); %getDistance(tstip(kk),ip(ll));
+			distval(ll)=norm(tstip(kk,:)-ip(ll,:)); %getDistance(tstip(kk),ip(ll));
 		end;
 
 		for ll=1:kval,

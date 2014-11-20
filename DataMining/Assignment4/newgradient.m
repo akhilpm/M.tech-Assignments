@@ -123,7 +123,7 @@ function  newgradient()
 	set1=cvpartition(m,'kfold',k);
 	allData=zeros(10,2);
 	t=1;
-	for l=0.1:0.1:1,
+	for l=29:0.1:30,
 		lambda=l;
 		Theta=zeros(1,n-1);
 		tsterror=zeros(1,k);

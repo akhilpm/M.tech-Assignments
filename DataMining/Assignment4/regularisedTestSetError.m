@@ -12,7 +12,7 @@ function err = regularisedTestSetError(X,T,l,y)
 	sumT=sum(T)-T(1)^2;
 	err=err+sumT*l;
 	err=err/(m);
-	err=sqrt(err);			
+	%err=sqrt(err);			
 
 end
 

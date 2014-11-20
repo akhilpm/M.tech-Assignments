@@ -14,6 +14,7 @@ function ridgeRegresion()
 
 		%theta=zeros(pvec(ii)+1,1);
 		X=powerX(oldX,pvec(ii));
+
 		[m,n]=size(X);		
 		set=cvpartition(m,'LeaveOut');
 
@@ -87,6 +88,7 @@ function ridgeRegresion()
 	oldX(:,n)=[];
 	%theta=zeros(2,1);
 	theta=pinv(oldX'*oldX)*oldX'*Y;
+
 	meanError=meanSquareError(oldX,theta,Y);
 
 	set1=allData(1:20,:);
@@ -100,5 +102,10 @@ function ridgeRegresion()
 	fprintf('best model with 3rd degree polynomial :lambda=%0.2f error estimated=%0.4f\n',set2(idx2,1),minset2);
 	fprintf('best model with 7th degree polynomial :lambda=%0.2f error estimated=%0.4f\n',set3(idx3,1),minset3);
 	fprintf('mean error by least square method :%0.4f\n',meanError);
+	size(oldX)
+	size(theta)
+	yP = oldX*theta;
+	figure(4);
+	plot(oldX(:,2),Y,'+');
 end
 

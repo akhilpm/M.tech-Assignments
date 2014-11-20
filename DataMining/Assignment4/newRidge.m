@@ -2,11 +2,11 @@ function newRidge()
 
 	oldX=load('Data.txt');
 	[m,n]=size(oldX);
-	Y=oldX(:,n);
+	%Y=oldX(:,n);
 	oldX=[ones(m,1) oldX];
     pvec1=[2 3 7 0];
 	epsilon=1e-5;    
-	count=0;
+	%count=0;
 	allData1=zeros(20,4);
 	allData2=zeros(20,4);
 	allData3=zeros(20,4);
@@ -17,7 +17,7 @@ function newRidge()
 	count4=1;	
 	set1=cvpartition(m,'holdout',0.3);
     XIP=oldX(training(set1),:);
-    Y=XIP(:,n);
+    Y=XIP(:,n+1);
     TEST=oldX(test(set1),:);
     m=size(XIP,1);
 
@@ -30,11 +30,12 @@ function newRidge()
 			X=powerX(XIP,pvec1(ii));
 		end;	
 		[m,n]=size(X);
-		X(:,n)=[];
-		X=featureScale(X);
-		X=[X Y];
-    	[m,n]=size(X);
+		%X(:,n)=[];
+		%X=featureScale(X);
+		%X=[X Y];
+    	%[m,n]=size(X);
 		set=cvpartition(m,'LeaveOut');
+		%count=1;
 
 		for l=0.1:0.1:2,
 
@@ -144,7 +145,7 @@ function newRidge()
 	n=size(X,2);
 	X(:,n)=[];
 	T=zeros(1,n-1);
-	X=featureScale(X);
+	%X=featureScale(X);
 	for kk=1:50,
 		[jval,grad]=regularizedCostFunction(X,T,lambda,Y);
 		cost1(kk)=jval;
@@ -166,7 +167,7 @@ function newRidge()
 	n=size(X,2);
 	X(:,n)=[];
 	T=zeros(1,n-1);	
-	X=featureScale(X);
+	%X=featureScale(X);
 	for kk=1:50,
 		[jval,grad]=regularizedCostFunction(X,T,lambda,Y);
 		cost1(kk)=jval;
