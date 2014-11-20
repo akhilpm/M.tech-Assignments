@@ -1,0 +1,535 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+%\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default  Margins
+%\usepackage{cite}
+\usepackage{hyperref}
+%\usepackage[framed]{mcode}
+%\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{framed}
+%\usepackage{tcolorbox}
+\definecolor{shadecolor}{RGB}{180,180,180}
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+%\lhead{\hmwkAuthorName} % Top left header
+%\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+%\rhead{\firstxmark} % Top right header
+%\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{ \thepage\ } % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{} % Header and footer within the environment
+}{
+\exitProblemHeader{} % Header and footer after the environment
+}
+
+%\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+%\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+%}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{} % Header and footer within the environment
+}{
+\enterProblemHeader{} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Assignment\ \#5} % Assignment title
+%\newcommand{\hmwkDueDate}{Monday,\ January\ 1,\ 2012} % Due date
+%\newcommand{\hmwkClass}{BIO\ 101} % Course/class
+%\newcommand{\hmwkClassTime}{10:30am} % Class/lecture time
+%\newcommand{\hmwkClassInstructor}{Jones} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Akhil P M (SC14M044)} % Your name
+
+\newcommand{\tab}[1]{\hspace{.1\textwidth}\rlap{#1}}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\textsc{Indian Institute of Space Science and Technology Thiruvananthapuram} \\ [25pt]
+\vspace{2in}
+\textmd{\textbf{\hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ 19-11-2014}\\
+%\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}[\textbf{1.K-means \& K-medioid}]
+
+\begin{homeworkSection}{\textbf{1.1 K-means }}
+
+a.using Eucledian distance\\
+
+\begin{tabular}{|l|l|}
+	\hline
+	\textbf{K value} & \textbf{DB index}\\
+	\hline	
+	2 & 3.838935\\
+  	3 & 1.191889\\
+  	4 & 1.235967\\
+  	5 & 1.285125\\
+  	6 & 1.226606\\
+  	\hline
+\end{tabular}\\ \\
+
+b.using Manhattan distance\\
+
+\begin{tabular}{|l|l|}
+	\hline
+	\textbf{K value} & \textbf{DB index}\\
+	\hline	
+	2 & 3.615385\\
+  	3 & 1.197559\\
+  	4 & 2.108696\\
+  	5 & 1.753846\\
+  	6 & 1.294872\\
+  	\hline
+\end{tabular}\\ \\
+
+Plot of J$(c,\mu)$\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{kmeans_jcw}
+	\caption{J$(c,\mu)$ v/s K value}
+\end{figure}
+
+The clusters obtained are(same for both Eucledian \& Manhattan Metric)
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{kmeans_clusters}
+	\caption{Clusters with k-means}
+\end{figure}
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{1.2 K-medioid }}
+
+a.using Eucledian distance\\
+
+\begin{tabular}{|l|l|}
+	\hline
+	\textbf{K value} & \textbf{DB index}\\
+	\hline	
+	2 & 3.077485\\
+  	3 & 0.957000\\
+  	4 & 1.447470\\
+  	5 & 1.022754\\
+  	6 & 1.147529\\
+  	\hline
+\end{tabular}\\ \\
+
+b.using Manhattan distance\\
+
+\begin{tabular}{|l|l|}
+	\hline
+	\textbf{K value} & \textbf{DB index}\\
+	\hline	
+	2 & 3.000000\\
+  	3 & 0.975000\\
+  	4 & 1.566667\\
+  	5 & 1.034286\\
+  	6 & 1.177778\\
+  	\hline
+\end{tabular}\\ \\
+
+Plot of J$(c,\mu)$\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{kmedioid_jcw}
+	\caption{J$(c,\mu)$ v/s K value}
+\end{figure}
+
+The clusters obtained are(same for both Eucledian \& Manhattan Metric)
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{kmedioid_clusters}
+	\caption{Clusters with k-means}
+\end{figure}
+
+\end{homeworkSection}
+
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{2.Agglomerative \& Divisive Clustering}]
+
+\begin{homeworkSection}{\textbf{2.1 Agglomerative Clustering }}
+The merging sequence is 
+\begin{itemize}
+	\item ($A_3$),($A_5$)
+	\item ($A_4$),($A_8$)
+	\item ($A_3$,$A_5$),($A_6$)
+	\item ($A_1$),($A_4$,$A_8$)
+	\item ($A_2$),($A_7$)
+	\item ($A_3$,$A_5$,$A_6$),($A_1,A_4,A_8$)
+	\item ($A_3,A_5,A_6,A_1,A_4,A_8$),($A_2,A_7$)
+\end{itemize}
+
+the corresponging dendogram is\n 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{AgglomerativeDendrogram}
+	\caption{Agglomerative clustering}
+\end{figure}
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{2.2 Divisive Clustering }}
+Here the splitting sequence is
+\begin{itemize}
+	\item L1 ($A_1,A_4,A_8$),($A_2,A_3,A_5,A_6,A_7$)
+	\item L2 ($A_1$),($A_4,A_8$),($A_2,A_7$),($A_3,A_5,A_6$)
+	\item L3 ($A_4$),($A_8$),($A_2$),($A_7$),($A_3,A_5$),($A_6$)
+	\item L4 ($A_3$),($A_5$)
+\end{itemize}
+The splitting at a level is done by performing k-means clustering at that level with k=2.\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{DivisiveDendrogram}
+	\caption{Divisive clustering}
+\end{figure}
+
+
+\end{homeworkSection}
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{3.Self Organizing Maps}]
+
+Best classification obtained(from multiple runs of the algorithm)\\\\
+fraction of class1 flowers:0.344\\
+fraction of class2 flowers:0.344\\
+fraction of class3 flowers:0.313\\
+
+Since the fraction of each class of flowers is 0.333 in the give data set this can 
+be thought of as a good classification.\\
+
+SOM Neurons when initialized\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{sombeforeTrain}
+	\caption{Initial state}
+\end{figure}
+
+SOM Neurons after training is over\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{umatrix}
+	\caption{Convergence status}
+\end{figure}
+
+As we can see, the white regions belongs to clusters and the dark border is the one which separates the clusters from one another.\\
+
+Hyper Parameter values$\colon$ \\
+$\alpha$=0.05\\
+No. of clusters = 3\\
+
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{4.Visualization Techniques in SOM}]
+
+\begin{homeworkSection}{\textbf{4.1 U-matrix }}
+The U-matrix stands for unified distance and contains in each cell the euclidean distance (in the input space) between neighboring cells. Small values in this matrix mean that SOM nodes are close together in the input space, whereas larger values mean that SOM nodes are far apart, even if they are close in the output space. As such, the U-matrix can be seen as summary of the probability density function of the input matrix in a 2D space. Usually, those distance values are discretized, color-coded based on intensity and displayed as a kind of heatmap.
+
+U-matrix (unified distance matrix) representation of the Self-Organizing Map  visualizes the distances between the neurons. The distance between the adjacent neuons is calculated and presented with different colorings between the adjacent nodes. A dark coloring between the neurons corresponds to a large distance . A light coloring between the neurons signifies that the  vectors are close to each other in the input space. Light areas can be thought as clusters and dark areas as cluster separators. This can be a helpful presentation when one tries to find clusters in the input data without having any a priori information about the clusters.
+
+The U-Matrix value of a particular node is the average distance between the node's weight vector and that of its closest neighbors. In a square grid, for instance, we might consider the closest 4 or 8 nodes (the Von Neumann and Moore neighborhoods, respectively), or six nodes in a hexagonal grid\cite{ref2}.\\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{somUmatrix}
+	\caption{U-matrix}
+\end{figure}
+
+In the Figure above we can see the neurons of the network marked as black dots. The representation reveals that these are a separate cluster in the upper right corner of this representation. The clusters are separated by a dark gap.
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{4.2 Other Methods }}
+There are many other methods proposed by researchers which uses visualization techniques that take the distribution of the data set in input space and its density into account. Most commonly, this is visualized as hit histograms, which display the number of data points projected to each map node. A more advanced method is the P-Matrix that visualizes how densely populated each unit is by counting the number of data points within the sphere of a certain radius around the model vector in question. Another recently proposed technique that aims at depicting both density and cluster structures is the Smoothed Data Histogram, which relies on a parameter that determines how blurred the visualization will be. There are also techniques that depict the contribution of the individual variable dimensions to the clustering structure, like LabelSOM. Other techniques providing insight into the distribution of the data manifold are projection methods like PCA and Sammon`s Mapping\cite{ref1}.
+
+\end{homeworkSection}
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{5.Cluster Evaluation Techniques}]
+
+Cluster evaluation techniques are mainly classified into two.
+\begin{itemize}
+	\item Internal evaluation
+	\item Exrernal evaluation
+\end{itemize}
+
+\begin{homeworkSection}{\textbf{5.1 Internal Evaluation}}
+When a clustering result is evaluated based on the data that was clustered itself, this is called internal evaluation. These methods usually assign the best score to the algorithm that produces clusters with high similarity within a cluster and low similarity between clusters. One drawback of using internal criteria in cluster evaluation is that high scores on an internal measure do not necessarily result in effective information retrieval applications.Additionally, this evaluation is biased towards algorithms that use the same cluster model. For example k-Means clustering naturally optimizes object distances, and a distance-based internal criterion will likely overrate the resulting clustering.Therefore, the internal evaluation measures are best suited to get some insight into situations where one algorithm performs better than another, but this shall not imply that one algorithm produces more valid results than another\cite{ref4}.\\
+
+\textbf{a.Davies-Bouldin index}\\
+The Davies-Bouldin index can be calculated by the following formula$\colon$
+
+\[ DB = \frac {1} {n} \sum_{i=1}^{n} \max_{i\neq j}\left(\frac{\sigma_i + \sigma_j} {d(c_i,c_j)}\right) \]
+
+where n is the number of clusters, $c_x$ is the centroid of cluster x, $\sigma_x$ is the average distance of all elements in cluster x to centroid $c_x$, and $d(c_i,c_j)$ is the distance between centroids $c_i$ and $c_j$. Since algorithms that produce clusters with low intra-cluster distances (high intra-cluster similarity) and high inter-cluster distances (low inter-cluster similarity) will have a low Davies-Bouldin index, the clustering algorithm that produces a collection of clusters with the smallest Davies-Bouldin index is considered the best algorithm based on this criterion.\\ 
+
+\textbf{b.Dunn Index}\\
+The Dunn index aims to identify dense and well-separated clusters. It is defined as the ratio between the minimal inter-cluster distance to maximal intra-cluster distance. For each cluster partition, the Dunn index can be calculated by the following formula$\colon$
+
+\[ D = \min_{1\leq i \leq n}\left\{\min_{1\leq j \leq n,i\neq j}\left\{\frac {d(i,j)}{\max_{1\leq k \leq n}{d^{'}(k)}}\right\}\right\} \]
+
+where \textit{d(i,j)} represents the distance between clusters \textit{i} and \textit{j}, and $d^{'}(k)$ measures the intra-cluster distance of cluster k. The inter-cluster distance \textit{d(i,j)} between two clusters may be any number of distance measures, such as the distance between the centroids of the clusters. Similarly, the intra-cluster distance $d^{'}(k)$ may be measured in a variety ways, such as the maximal distance between any pair of elements in cluster k. Since internal criterion seek clusters with high intra-cluster similarity and low inter-cluster similarity, algorithms that produce clusters with high Dunn index are more desirable.\\
+
+\textbf{c.Silhouette coefficient}\\
+The silhouette coefficient contrasts the average distance to elements in the same cluster with the average distance to elements in other clusters. Objects with a high silhouette value are considered well clustered, objects with a low value may be outliers. This index works well with k-means clustering, and is also used to determine the optimal number of clusters.
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{5.2 External Evaluation}}
+In external evaluation, clustering results are evaluated based on data that was not used for clustering, such as known class labels and external benchmarks. Such benchmarks consist of a set of pre-classified items, and these sets are often created by human (experts). Thus, the benchmark sets can be thought of as a gold standard for evaluation. These types of evaluation methods measure how close the clustering is to the predetermined benchmark classes. However, it has recently been discussed whether this is adequate for real data, or only on synthetic data sets with a factual ground truth\cite{ref4}.\\
+
+\textbf{a.Rand Measure}\\
+The Rand index computes how similar the clusters (returned by the clustering algorithm) are to the benchmark classifications. One can also view the Rand index as a measure of the percentage of correct decisions made by the algorithm. It can be computed using the following formula$\colon$
+
+\[ RI = \frac {TP + TN} {TP + FP + FN + TN} \]
+
+where TP is the number of true positives, TN is the number of true negatives, FP is the number of false positives, and FN is the number of false negatives. One issue with the Rand index is that false positives and false negatives are equally weighted. This may be an undesirable characteristic for some clustering applications.\\
+
+\textbf{b.F-measure}\\
+The F-measure can be used to balance the contribution of false negatives by weighting recall through a parameter $\beta$$\geq$0. Let precision and recall be defined as follows$\colon$
+
+\[ P = \frac {TP } {TP + FP } \]
+
+\[ R = \frac {TP } {TP + FN} \]
+
+where P is the precision rate and R is the recall rate. We can calculate the F-measure by using the following formula$\colon$
+
+\[ F_{\beta} = \frac {(\beta^2 + 1)\cdot P \cdot R } {\beta^2 \cdot P + R} \]
+
+Notice that when $\beta$=0, $F_{0}$=P. In other words, recall has no impact on the F-measure when $\beta$=0, and increasing $\beta$ allocates an increasing amount of weight to recall in the final F-measure.\\ 
+
+\textbf{c. Jaccard Index}\\
+The Jaccard index is used to quantify the similarity between two datasets. The Jaccard index takes on a value between 0 and 1. An index of 1 means that the two dataset are identical, and an index of 0 indicates that the datasets have no common elements. The Jaccard index is defined by the following formula$\colon$
+
+\[ J(A,B) = \frac {|A \cap B| } {|A \cup B|} = \frac{TP}{TP + FP + FN} \] 
+
+This is simply the number of unique elements common to both sets divided by the total number of unique elements in both sets.\\
+
+\textbf{d. Confusion Matrix}\\
+A confusion matrix can be used to quickly visualize the results of a classification (or clustering) algorithm. It shows how different a cluster is from the gold standard cluster.\\
+
+\textbf{e. Purity}\\
+Purity is a simple and transparent evaluation measure.To compute purity , each cluster is assigned to the class which is most frequent in the cluster, and then the accuracy of this assignment is measured by counting the number of correctly assigned documents and dividing by N. Formally$\colon$ 
+\[ (\Omega,\mathbb{C})= \frac{1}{N} \sum_k \max_j |\omega_k \cap c_j| \]
+
+where  $\Omega = \{ \omega_1, \omega_2, \ldots, \omega_K \}$ is the set of clusters and 
+$\mathbb{C}$ = $\{ c_1,c_2,\ldots,c_J \}$ is the set of classes.
+
+Bad clusterings have purity values close to 0, a perfect clustering has a purity of 1.High purity is easy to achieve when the number of clusters is large - in particular, purity is 1 if each document gets its own cluster. Thus, we cannot use purity to trade off the quality of the clustering against the number of clusters\cite{ref3}.
+
+\end{homeworkSection}
+
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}[\textbf{6.Mahalanobis Distance}]
+Mahalanobis distance measures the distance of a point x from a data distribution. The data distribution is characterized by a mean and the covariance matrix, thus is hypothesized as a multivariate gaussian.The covariance matrix gives the shape of how data is distributed in the feature space.\\
+The Mahalanobis distance has the following properties$\colon$
+\begin{itemize}
+	\item It accounts for the fact that the variances in each direction are different.
+	\item It accounts for the covariance between variables.
+	\item It reduces to the familiar Euclidean distance for uncorrelated variables with unit variance.
+\end{itemize}
+
+For univariate normal data, the univariate z-score standardizes the distribution (so that it has mean 0 and unit variance) and gives a dimensionless quantity that specifies the distance from an observation to the mean in terms of the scale of the data. For multivariate normal data with mean $\mu$ and covariance matrix $\Sigma$, you can decorrelate the variables and standardize the distribution by applying the Cholesky transformation z = $L^{-1}$(x - $\mu$), where L is the Cholesky factor of $\Sigma$, 
+$\Sigma$=$LL^T$.\\
+
+After transforming the data, we can compute the standard Euclidian distance from the point z to the origin. In order to get rid of square roots, we will compute the square of the Euclidean distance, which is dist2(z,0) = $z^Tz$. This measures how far from the origin a point is, and it is the multivariate generalization of a z-score.
+We can rewrite $z^Tz$ in terms of the original correlated variables. The squared distance $Mahal^2$(x,$\mu$) is 
+	\[ = z^Tz \] 
+	\[ = (L^{-1}(x - \mu))^T (L^{-1}(x-\mu)) \] 
+	\[ = (x - \mu)^T (LL^T)^{-1}(x-\mu) \] 
+	\[ = (x - \mu)^T\Sigma^{-1}(x-\mu) \]
+
+The last formula is the definition of the squared Mahalanobis distance. The derivation uses several matrix identities such as $(AB)^T$ = $B^TA^T$, $(AB)^-1$ = $B^{-1}A^{-1}$, and $(A^{-1})^T$ = $(A^T)^{-1}$. Notice that if $\Sigma$ is the identity matrix, then the Mahalanobis distance reduces to the standard Euclidean distance between x and $\mu$.
+The Mahalanobis distance accounts for the variance of each variable and the covariance between variables. Geometrically, it does this by transforming the data into standardized uncorrelated data and computing the ordinary Euclidean distance for the transformed data. In this way, the Mahalanobis distance is like a univariate z-score: it provides a way to measure distances that takes into account the scale of the data.\\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{mahalonubus}
+	\caption{Mahalanobis distance is same for all ellipse in this figure}
+\end{figure}
+
+The figure indicates three different classes and the red line indicates the same Mahalanobis distance for each class. All points lying on the red line have the same distance from the class mean, because it is used the covariance matrix.
+The key feature is the use of covariance as a normalization factor.\\
+
+\end{homeworkProblem}
+
+\begin{homeworkProblem}[\textbf{7.Page Ranking Problem}]
+The nodes 4 \& 5 are dangling nodes in this case.The link structure gives matrix A as\\
+$$
+\begin{pmatrix}
+	0 & 0 & 0 & 0 & 0\\
+	0.33 & 0 & 0 & 0 & 0\\
+	0.33 & 1 & 0 & 0 & 0\\
+	0.33 & 0 & 0.5 & 0 & 0\\
+	0 & 0 & 0.5 & 0 & 0\\
+\end{pmatrix}
+$$
+
+we form matrix \textit{M=(1-p)*A+p*S} where S is a 5*5 matrix with all entries as $\frac{1}{n}$ where n is the number of pages in the web structure.\\
+M matrix  computed by taking damping factor \textit{p}=0.15 is $\colon$
+$$
+\begin{pmatrix}
+	0.030 &  0.030 &  0.030 &  0.200  & 0.200\\
+	0.313 &  0.030 &  0.030 &  0.200  & 0.200\\
+    0.313 &  0.880 &  0.030 &  0.200  & 0.200\\
+   	0.313 &  0.030 &  0.455 &  0.200  & 0.200\\
+   	0.030 &  0.030 &  0.455 &  0.200  & 0.200\\
+\end{pmatrix}
+$$
+
+The page rank obtained by computing eigen vector corresponding to eigen value 1 is$\colon$
+$$
+\begin{pmatrix}
+	0.23857\\
+	0.30609\\
+	0.56630\\
+	0.54680\\
+	0.47928\\
+\end{pmatrix}
+$$
+
+Page rank obtained by power method with initial rank vector V=[0.2 0.2 0.2 0.2 0.2$]^T$ is$\colon$
+$$
+\begin{pmatrix}
+	0.11149\\
+   	0.14305\\
+    0.26466\\
+    0.25553\\
+    0.22397\\
+\end{pmatrix}
+$$
+\end{homeworkProblem}
+
+\begin{thebibliography}{9}
+
+\bibitem{ref3}
+ 	NLP-stanford,
+ 	\emph{http://nlp.stanford.edu/IR-book/html/htmledition/evaluation-of-clustering-1.html}
+
+\bibitem{ref4}
+	Cluster Analysis wikipedia,
+	\emph{http://en.wikipedia.org/wiki/Cluster\_analysis}.
+
+\bibitem{ref1}
+	Advanced visualization techniques for Self-Organizing Maps with graph-based methods,
+	\emph{Georg P Olzlbauer, Andreas Rauber, and Michael Dittenbach}
+
+\bibitem{ref2}	
+	SOM Wikipedia, 
+	\emph{http://en.wikipedia.org/wiki/Self-organizing\_map}
+
+\end{thebibliography}
+
+
+\end{document}
