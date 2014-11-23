@@ -1,0 +1,27 @@
+A =
+
+     1     2
+     3     4
+
+>> b
+
+b =
+
+     2
+     3
+
+>> c
+
+c =
+
+     0
+
+optimal value:
+    0.5009
+    0.4396
+
+
+min value attained for optimal x is :-1.258
+alplha value:-0.000000
+beta value:0.001065
+

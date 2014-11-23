@@ -1,0 +1,33 @@
+
+A =
+
+     4     2
+     2     2
+
+>> b
+
+b =
+
+    -1
+     1
+
+>> c
+
+c =
+
+     0
+
+>> xold
+
+xold =
+
+     0
+     0
+
+optimal value:
+   -1.8545
+    1.7691
+
+
+min value attained for optimal x is :-0.177
+alplha value:1.801707

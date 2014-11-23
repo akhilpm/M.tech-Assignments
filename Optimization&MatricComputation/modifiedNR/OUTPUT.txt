@@ -1,0 +1,3 @@
+optimal value:7.089
+min value attained for optimal x:-4.495
+alpha value :0.10

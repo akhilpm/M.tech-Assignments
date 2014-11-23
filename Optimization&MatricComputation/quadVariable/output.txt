@@ -1,0 +1,26 @@
+A =
+
+     1     2
+     3     4
+
+>> b
+
+b =
+
+     2
+     3
+
+>> c
+
+c =
+
+     0
+
+xnew =
+
+   -1.0000
+    1.5000
+
+
+min value attained for optimal x:-1.250
+alplha value:0.187615     
