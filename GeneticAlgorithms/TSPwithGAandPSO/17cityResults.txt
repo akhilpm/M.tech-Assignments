@@ -1,0 +1,44 @@
+=========POPULATION SIZE:20==================================
+
+no of generations:140
+
+maximul fitness of an individual:2345
+
+optimum tour
+[ 15.  10.   2.   5.  11.   3.  16.  12.   9.   4.   1.  13.   8.  17.   7.  6.  14.]
+
+
+=========POPULATION SIZE:30==================================
+
+no of generations:121
+
+maximul fitness of an individual:2168
+
+optimum tour
+[  3.   5.   2.  10.  11.   9.  12.  16.   1.   4.  13.   7.  17.   8.   6.  14.  15.]
+
+
+
+no of generations:90
+
+maximul fitness of an individual:2262
+
+optimum tour
+[  9.  12.  16.   4.   1.   7.  13.  17.   8.   6.  14.  15.   3.  11.   2.  10.   5.]
+
+
+no of generations:130
+
+maximul fitness of an individual:2239
+
+optimum tour
+[ 15.  11.   2.  10.   5.   3.   6.   8.   7.   1.  16.  12.   9.   4.  13.  17.  14.]
+
+
+no of generations:80
+
+maximul fitness of an individual:2097
+
+optimum tour
+[  9.  12.  16.   1.   4.  13.   7.  17.   6.   8.  14.  15.   3.  11.  10.  2.   5.]
+
