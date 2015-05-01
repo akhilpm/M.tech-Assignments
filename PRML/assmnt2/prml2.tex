@@ -1,0 +1,284 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+%\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default  Margins
+%\usepackage{cite}
+\usepackage{hyperref}
+%\usepackage[framed]{mcode}
+%\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+%\usepackage{tcolorbox}
+\definecolor{shadecolor}{RGB}{180,180,180}
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+%\lhead{\hmwkAuthorName} % Top left header
+%\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+%\rhead{\firstxmark} % Top right header
+%\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{ \thepage\ } % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+%{#1}
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{} % Header and footer within the environment
+}{
+\exitProblemHeader{} % Header and footer after the environment
+}
+
+%\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+%\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+%}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{} % Header and footer within the environment
+}{
+\enterProblemHeader{} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Assignment\ \#2} % Assignment title
+%\newcommand{\hmwkDueDate}{Monday,\ January\ 1,\ 2012} % Due date
+%\newcommand{\hmwkClass}{BIO\ 101} % Course/class
+%\newcommand{\hmwkClassTime}{10:30am} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Sumitra S} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Akhil P M (SC14M044)} % Your name
+
+\newcommand{\tab}[1]{\hspace{.05\textwidth}\rlap{#1}}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\textsc{Indian Institute of Space Science and Technology Thiruvananthapuram} \\ [25pt]
+\vspace{2in}
+\textmd{\textbf{\hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ 27-03-2015}\\
+%\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ }}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+%\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+%\section{\centerline{\textbf{Packet Routing in Dynamically Changing Networks}} \newline \centerline{\textbf{A Reinforcement Learning Approach}}}
+\section{Assignment 2}
+
+\subsection{\textbf{1. Consider w$\in \mathbb{R}^n$. Let $f(x)=\langle w,x\rangle \forall x \in \mathbb{R}^n$. Find $||f||$.}}
+We have 
+\[f(x)=\langle w,x\rangle \quad \forall x \in \mathbb{R}^n \]
+\[||f(x)||=||\langle w,x\rangle|| \]
+\[\quad \quad \quad \leq ||w||*||x|| \]
+\[ \Longrightarrow \quad sup \frac{||f(x)||}{||x||} \leq ||w|| \]
+\begin{equation}
+\Longrightarrow \quad ||f|| \leq ||w|| 
+\end{equation}
+By the definition of norms. But we have\\
+\[f(w) = \langle w,w\rangle \quad = ||w||^2 \]
+\[\Longrightarrow \quad \frac{||f(w)||}{||w||} = ||w|| \]
+\[\quad \quad \leq sup \frac{||f(w)||}{||w||}  = ||f|| \]
+\begin{equation}
+\Longrightarrow ||w|| \leq ||f|| 
+\end{equation}
+combining (1) and (2) we will get $||f||=||w||$.
+
+\subsection{\textbf{2. Let the data \{($x_i , y_i$ ), i = 1,2,$\ldots$,N\}, $x_i \in \mathbb{R}^N, y_i \in \mathbb{R}$ be generated by a hyperplane. By kernel theory, the function that generates the data can be written as a linear combination of N training points and a bias term. However if the data is n dimensional the equation of the hyper plane consists of n+1 terms. Are these the same? Justify your answer.}}
+
+No. In kernel methods we are getting a hyperplane in feature space which is linear. But the equation of the hyperplane consisting of n+1(n is the number of attributes) terms is obtained in the input space itself. In case of classification, the data will be always separable in feature space by that hyperplane, but in input space they may be non-separable with a hyperplane. Moreover, the representation of these hyperplanes are also different in terms of coefficients, number of terms in the equation etc. Hence it can be concluded that the two hyperplanes are different.
+
+\subsection{\textbf{3. Consider the following data \{[(1,1),-1], [(1,-1),1], [(-1,-1),-1], [(-1,1),1]\} \\ (a) Plot the nonlinear boundary in the input space.\\ (b) Plot the linear boundary in RKHS space generated by the kernel $k(x,y)=\langle x, y\rangle^2$ and the representor of evaluation at the input points.}}
+
+This is called XOR problem, a simplest linearly non-separable data set. In the input space the data is non-separable with a line. So we need minimum two lines as shown in fig.1 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{q3_ipspace}
+  \caption{Points in input space}
+\end{figure}
+We will transform each point (x,y) in input space to the given feature space as ($x^2,y^2,\sqrt{2}xy$). Then they become linearly separable.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{q3_fspace}
+  \caption{Points in feature space}
+\end{figure}
+\subsection{4. Apply SVM classification on Data 1 and regression on Data 2 (find the attached documents).}
+\textbf{(a) Apply direct method and an iterative technique to solve the problem.\\ (b) Find suitable kernel using cross validation techniques.\\ (c) Plot the decision boundary for classification and the SVM points.\\ (d) Plot the function that generates the data for the regression.\\ (e) Plot the value of primal and dual objective function against iteration.\\ (f) Assess the performance of the model.}
+
+Average accuracy is high for gaussian kernel compared to other kernels from the cross validation results. \\
+\begin{tabular}{|l|l|l|}
+	\hline
+	\textbf{Kernel Type} & \textbf{Avg. Accuracy} & \textbf{Avg. F-measure}\\
+	\hline	
+	Gaussian & .718 & .687\\
+  	Linear & .67 & .644\\
+  	Polynomial(d=7)& .707 & .649\\
+  	\hline
+\end{tabular}\\ \\
+
+The decision boundary obtained with iterative methods is shown below.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{classificationDB}
+  \caption{Decision Boundary for Classification}
+\end{figure}
+The plot of primal objective v/s dual objective is shown  below
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{primalvsdual}
+  \caption{Primal v/s Dual objective Plot}
+\end{figure}
+Classification gives full accuracy with gaussian kernel.\\
+no of misclassifications :0\\
+accuracy :1.000\\
+precision :1.000\\
+recall/sensitivity :1.000\\
+F-Measure :1.000\\
+
+Optimal Parameter Values\\
+C=.7\\
+gama=.09\\
+No of support points=13
+
+The function that generates the regression is approximated as shown in the following fig.5
+\begin{figure}[h]
+  \includegraphics[scale=0.5]{regres}
+  \caption{Regression Plot}
+\end{figure}
+
+No of support vectors:174\\
+no of iterations:5000\\
+Average RMSE:0.4486\\
+Polynomial kernel is giving more accuracy for regression(d=3)\\
+
+
+\subsection{5. Discuss the scalability of kernel methods}
+A bottleneck in scaling up kernel methods comes from the storage and computation cost of the dense kernel matrix, K. Storing the matrix requires O($n^2$) space, and computing it takes O($n^2d$) operations, where n is the number of data points and d is the dimension. 
+
+A common numerical linear algebra approach is to approximate the kernel matrix using low-rank factorizations, K $\approx$ $A^TA$, with A $\in$ $R^{r*n}$ and rank $r\leq n$. This low-rank approximation allows subsequent kernel algorithms to directly operate on A, but computing the approximation requires $O(nr^2 + nrd)$ operations.Thus, in order for kernel methods to achieve the best generalization ability, low-rank approximation based approaches immediately become impractical for big datasets because of their O($n^3+n^2d$) preprocessing time and O($n^2$)storage\cite{ananth}.
+
+Random feature approximation is another popular approach for scaling up kernel methods. The method directly approximates the kernel function instead of the kernel matrix using explicit feature maps. The advantage of this approach is that the random feature matrix for n data points can be computed in time $O(nrd)$ using $O(nr)$ storage, where r is the number of random features. Subsequent algorithms then only need to operate on an $O(nr)$ matrix. Similar to low-rank kernel matrix approximation approach, the generalization ability of this approach is of the order O($\frac{1}{\sqrt{r}}+\frac{1}{\sqrt{n}}$), which implies that the number of random features also needs to be O(n)\cite{ananth}.
+
+Another approach that addresses the scalability issue rises from the optimization perspective. One general strategy is to solve the dual forms of kernel methods using the block-coordinate descent.Each iteration of this algorithm only incurs O(nrd) computation and $O(nr)$ storage, where r is the block size. A second strategy is to perform functional gradient descent based on a batch of data points at each epoch. Thus, the computation and storage in each iteration required are also $O(nrd)$ and $O(nr)$, respectively.  A serious drawback of these approaches is that, without further approximation, all support
+vectors need to be stored for testing, which can be as big as the entire training set\cite{ananth}.
+
+Doubly stochastic functional gradient is a recent approach proposed by  Anant Raj et.al in 2014. This method relies on the fact that most kernel methods can be expressed as convex optimization problems over functions in the reproducing kernel Hilbert spaces (RKHS)
+and solved via functional gradient descent. 
+
+Given a positive definite kernel k(x,x') and the associated reproducing kernel Hilbert space $\mathcal{H}$, the goal is to optimise a function $f^*$ $\in \mathcal{H}$ by minimising the expected loss with a regularisation term
+\[ f^* = \arg\min_{f \in \mathcal{H}} \mathbb{E}_{(x, y)}[l(f(x), y)] + \frac{\lambda}{2} ||f||^2_{\mathcal{H}} \]
+Given a datapoint, the stochastic functional gradient w.r.t. f $\in \mathcal{H}$ is defined by
+\[l'(f(x),y)k(x,.)+\lambda f(.), \]
+for a positive kernel the doubly stochastic functional gradient is given by
+\[l'(f(x),y)\phi_{\omega}(x)\phi_{\omega}(.)+\lambda f(.)\]
+Updating f via the doubly stochastic gradient,
+\[f_i = f_{i-1} - \gamma_i [l'(f(x),y)\phi_{\omega}(x)\phi_{\omega}(.)+\lambda f(.)], \] 
+where $\gamma_i$  is the step-size. The representer theorem says we can write down $f_i$ as a function of the following form
+\[ f_i(.) = \sum_{j=1}^i \alpha_j \phi_{\omega_j}(.) \]
+where $\alpha_i = - \gamma_i [ l'(f_{i-1}(x_i), y_i)\phi_{\omega_{i}}(x_i)]$ and $\alpha_j = (1-\gamma_i \lambda)\alpha_j$  for $j=1, \cdots, i-1$. In  this method is that we do not need to save $\omega_i$ for each datapoint. Rather, we use a seed (i) from a pseudo-random number generator for training $\alpha_i$, which we use for testing. So, the only thing one needs to store is the pseudo-random seed. Thus the memory requirement is just $O(n)$. The authors claim that this method finds the optimal function with rate $O(\frac{1}{t})$ and achieves a generalisation bound of $O(\frac{1}{\sqrt{t}})$.
+
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{thebibliography}{9}
+\bibitem{ananth}
+  Bo Dai, Bo Xie, Niao He, Yingyu Liang, Anant Raj, Maria-Florina Balcan, Le Song, "Scalable Kernel Methods via Doubly Stochastic Gradients ", \emph{Advances in Neural Information Processing Systems } 27,  3041-3049, 2014. 
+
+\end{thebibliography}
+
+
+\end{document}

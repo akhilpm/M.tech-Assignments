@@ -1,0 +1,373 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default  Margins
+%\usepackage{cite}
+\usepackage{hyperref}
+%\usepackage[framed]{mcode}
+%\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{float}
+%\usepackage{framed}
+\usepackage{amsfonts}
+%\usepackage{tcolorbox}
+\definecolor{shadecolor}{RGB}{180,180,180}
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+%\lhead{\hmwkAuthorName} % Top left header
+%\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+%\rhead{\firstxmark} % Top right header
+%\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{ \thepage\ } % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{} % Header and footer within the environment
+}{
+\exitProblemHeader{} % Header and footer after the environment
+}
+
+%\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+%\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+%}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{} % Header and footer within the environment
+}{
+\enterProblemHeader{} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{Assignment\ \#1} % Assignment title
+%\newcommand{\hmwkDueDate}{Monday,\ January\ 1,\ 2012} % Due date
+%\newcommand{\hmwkClass}{BIO\ 101} % Course/class
+%\newcommand{\hmwkClassTime}{10:30am} % Class/lecture time
+%\newcommand{\hmwkClassInstructor}{Jones} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Akhil P M (SC14M044)} % Your name
+
+\newcommand{\tab}[1]{\hspace{.05\textwidth}\rlap{#1}}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\textsc{Indian Institute of Space Science and Technology Thiruvananthapuram} \\ [25pt]
+\vspace{2in}
+\textmd{\textbf{\hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ 02-02-2015}\\
+%\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+\newpage
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}[\textbf{Metric Space,Normed Space,Vector Space}]
+
+\begin{homeworkSection}{\textbf{1. Show that the set \textit{X} of all integers with metric defined by d(m,n) = |m-n| is a complete metric space.}}
+A sequence $x_1$,$x_2$,$x_3$$\ldots$ is called a Caushy`s sequence if\\ 
+$\forall \epsilon>0$ \tab{$\exists N |$  $\forall m,n>N$ $d(x_m,x_n)<\epsilon$}
+
+Take $\epsilon$=$\frac{1}{2}$.\\
+Then $\exists N$ $\colon$ $\forall m,n>N$ $d(x_m,x_n)<\frac{1}{2}$\\
+Since X is the set of integers and the difference cannot exceed $\frac{1}{2}$, then it should be 0; ie if a metric d is defined then $d(x_m,x_n)$ should be zero if $\epsilon$=$\frac{1}{2}$. 
+\[ \Longrightarrow d(x_m,x_n) = |m-n| = 0\]
+\[ \Longrightarrow x_m=x_n   \forall m,n>N \] 
+
+Thus the sequence $\{x_n\}$ $\longrightarrow$ x when n>N. Hence all cauchy`s sequences converges,so $(X,d)$ is a complete metric space.
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{2. Show that d(x,y) = $\sqrt{|x-y|}$ defines a metric on the set of all real numbers}}
+\[ d(x,y) = \sqrt{|x-y|} \forall x,y \in  \mathbb{R} \] 
+To check that whether d is a metric, we need to verify all the axioms of a metric.\\
+a. Since |x-y| > 0 $\forall x,y \in  \mathbb{R}$ d(x,y)>0 always.\\
+   and d(x,y)=0 only when |x-y|=0 $\Longrightarrow$ x=y.\\ \\
+b. \[\forall x,y \in  \mathbb{R} |x-y|=|y-x|\]
+   \[\Longrightarrow d(x,y) =  \sqrt{|x-y|} =  \sqrt{|y-x|} = d(y,x)\]
+c.Triangular inequality\\
+  it states that $\forall x,y,z \in \mathbb{R}$
+  \[ \sqrt{|x-z|} \leq \sqrt{|x-y|}+\sqrt{|y-z|} \] 	
+
+  we know that,
+  \[ |x-z| = |x-y+y-z| \leq |x-y|+|y-z| \]\\
+  Thus it follows from the properties of square roots and the above inequality
+  \[ \sqrt{|x-z|} \leq \sqrt{|x-y|}+\sqrt{|y-z|} \]
+Hence all the axioms are satisfied. So d(x,y) = $\sqrt{|x-y|}$ is a metric in $\mathbb{R}.$  
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{3. Show that the closure $\overline{Y}$ of a subspace Y of a normed space X is again a vector space.}}
+
+Inorder to prove that $\overline{Y}$ is a vector space it is sufficient to establish that
+\[ \alpha x+\beta y \in \overline{Y} \forall x,y \in  \overline{Y} \]
+and $\alpha \& \beta$ are from the underlying field \textit{F}.\\
+We know that $0 \in \overline{Y}$ since $Y \subset \overline{Y}$. Since x,y $\in \overline{Y}$ there exists $x_i,y_i \in X$ such that $x_i \longrightarrow x$ and $y_i \longrightarrow y$.Since multiplication and addition are continuous,
+\[ \alpha x_i+\beta y_i \longrightarrow \alpha x+\beta y \]
+Therefore,$\alpha x+\beta y \in \overline{Y} $   
+\end{homeworkSection}
+
+
+\begin{homeworkSection}{\textbf{4. Show that in an inner product space, x$\perp$y iff $||x+\alpha y|| \geq ||x|| \forall \alpha \in \mathbb{R}$}}
+we know that, 
+\[ ||x+\alpha y||^2 = \langle x+\alpha y,x+\alpha y \rangle \]
+\[ = \langle x,x \rangle + \alpha \langle x,y \rangle + \alpha \langle y,x \rangle + \alpha^2 \langle y,y \rangle \]
+Assuming the underlying field to be $\mathbb{R}$, the inner product becomes symmetric, and we obtain
+\[ ||x+\alpha y||^2 = \langle x,x \rangle + 2*\alpha \langle x,y \rangle + \alpha^2 \langle y,y \rangle \]
+
+If x$\perp$y then $\langle x,y \rangle $=0. Thus 
+\[ ||x+\alpha y||^2 = ||x||^2 + \alpha^2 ||y||^2 \]
+\[\Longrightarrow ||x+\alpha y||^2 \geq ||x||^2 \]
+\[\Longrightarrow ||x+\alpha y|| \geq ||x|| \]
+since, $\alpha^2 ||y||^2$ is always a positive value. This will violate only when the following two conditions occur simultaneously.\\
+I) x is not perpendicular to y\\
+II) $2*\alpha \langle x,y \rangle \geq -\alpha^2 ||y||^2$ \\
+Thus only if part is also verified.
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{5. Find $\langle u,v\rangle$, where v=$(1+2i,3-i)^T$, $u=(-2+i,4)^T$}}
+
+\[ \langle u,v\rangle = \langle(-2+i,4),(1+2i,3-i)\rangle\]
+for complex numbers $\langle (x1,x2)(y1,y2) \rangle = x1*\overline{y1}+x2*\overline{y2}$
+
+\[= (-2+i)(1-2i) + 4(3+i)\]
+\[= -2+4i+i+2+12+4i\]
+\[= 9i+12\]
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{6. Which of the following subsets of $\mathbb{R}^3$ constitute a subspace of $\mathbb{R}^3$ ? [x=$(\eta_1,\eta_2,\eta_3)^T$]}}
+(a) \textbf{All x with $\eta_1 = \eta_2$ and $\eta_3 = 0$.}\\
+(b) \textbf{All x with $\eta_1 = \eta_2+1$}
+
+a)\\
+Let Z=\{All x with $\eta_1 = \eta_2$ and $\eta_3 = 0$\}.\\
+Consider X=$(x,x,0)$,Y=$(y,y,0)$ $\in Z$
+\[X+Y = (x+y,x+y,0) \in Z \]
+\[\alpha X = (\alpha x,\alpha x,0) \in Z \]
+Thus Z is closed under addition and scalar multiplication,hence it is a subspace of $\mathbb{R}^3$.
+
+b)\\
+Let Z=\{All x with $\eta_1 = \eta_2+1$\}.\\
+Consider X=$(x+1,x,p)$,Y=$(y+1,y,q)$ $\in Z$ where p,q$\in \mathbb{R}$.
+\[X+Y = (x+y+2,x+y,p+q)) \notin Z  \]
+because $\eta_1 \neq \eta_2+1$ is violated here. Hence Z is not closed under addition. So it is not a subspace of $\mathbb{R}^3$.
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{7. Show that the norm ||x|| is the distance from x to 0}}
+Every normed space is a metric space or norm induces a metric on a vector space. Thus in a metric space with an induced norm
+\[ d(x,y) = ||x-y|| \]
+We know that d(x,y) is, 
+\[ d\colon X*X \longrightarrow \mathbb{K} \]
+and norm is,
+\[ ||\cdot|| \colon X \longrightarrow \mathbb{K} \]
+where $\mathbb{K}$ is the underlying field.\\
+if ||x|| is a metric in a metric space then we have, 
+\[ d(x,y) = ||x|| \]
+\[ \Longrightarrow y=0\]
+It implies that we are calculating the distance from origin. Hence ||x|| is the distance from 0.
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{8. If in an inner product space $\langle x,u\rangle = \langle x,v\rangle$ for all x , show that u=v.}}
+Since $\langle x,u\rangle = \langle x,v\rangle$,
+\[ \langle x,u\rangle - \langle x,v\rangle = \langle x,u-v\rangle = 0\]
+But we know that inner product is zero only when one of the two vectors is zero.(orthogonality case can be avoided, since x is neither orthogonal to u,nor to v, hence it cannot be orthogonal to a linear combination of u \& v.)\\
+Here x cannot be zero $\forall$ x.
+\[ \Longrightarrow u-v=0 \]
+\[ \Longrightarrow u=v \]
+
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{9. Prove that $||T_1T_2|| \leq ||T_1||*||T_2||; ||T^n|| \leq ||T||^n$}}
+
+This property is called submultiplicative property and is only valid for matrix norms.\\
+An induced matrix norm ||T|| is defined as 
+\[ ||T|| = \max \limits _{x \ne 0} \frac{||Tx||}{||x||} \] 
+Thus $||T_1T_2||$ is 
+\[ ||T_1T_2|| = \max \limits _{x \ne 0} \frac{||T_1T_2x||}{||x||} \]
+\[ = \max \limits _{x \ne 0} \frac{||T_1T_2x||}{||T_2x||}\frac{||T_2x||}{||x||} \]
+Putting $T_2x = y$ in the first part
+\[ \leq \max \limits _{y \ne 0} \frac{||T_1y||}{||y||} * \max \limits _{x \ne 0} \frac{||T_2x||}{||x||} \]
+\[ \leq ||T_1||*||T_2||\]
+
+b)\\
+\[ ||T^n|| \leq ||T||*||T \ldots T|| \]
+\[ \leq ||T||*||T||*||T \ldots T|| \]
+\[ \leq ||T||*||T||*\ldots*||T|| \]
+\[ \leq ||T||^n \]
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{10. For a real inner product space prove that $\langle x,y \rangle$ = $\frac{1}{4}(||x+y||^2-||x-y||^2 )$}}
+We know that,
+\[ ||x+y||^2 = \langle x+y,x+y \rangle \]
+\[ = \langle x,x \rangle + \langle x,y \rangle + \langle y,x \rangle + \langle y,y \rangle \]
+but for real IPS $\langle x,y \rangle = \langle y,x \rangle$.also $ \langle x,x \rangle = ||x||^2$,Then,
+\[ ||x+y||^2 = ||x||^2 + 2*\langle x,y \rangle + ||y||^2 \]
+Similarly,
+\[ ||x-y||^2 = ||x||^2 - 2*\langle x,y \rangle + ||y||^2 \]
+\[ ||x+y||^2 - ||x-y||^2 = 4*\langle x,y \rangle\]
+Thus,
+\[ \langle x,y \rangle = \frac{1}{4}(||x+y||^2 - ||x-y||^2) \]
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{11. Define T$\colon \mathbb{R}^2 \longrightarrow \mathbb{R}^2$ by T(x,y)=(x,0). Is T a linear operator ?}}
+An operator is said to be linear if\\
+a)D(T) and R(T) are vector spaces over the same field $\mathbb{K}$.\\
+b)T(x+y) = T(x)+T(y)\\
+  $T(\alpha x) = \alpha T(x)$\\
+
+
+In this case,D(T) = $\mathbb{R}^2$ is a vector space.\\
+R(T) = (x,0) where x$\in \mathbb{R}$ is also a vector space. Let X,Y $\in \mathbb{R}^2$\\
+\[T(X+Y) = T((x_1,x_2) + (y_1,y_2)) \]
+\[ = T(x_1+y_1,x_2+y_2) \]
+\[ = (x_1+y_1,0) = (x_1,0) + (y_1,0) \]
+\[ = T(X)+T(Y) \]
+Checking for the other condition,
+\[T(\alpha X) = T(\alpha x_1,\alpha x_2) \]
+\[ = (\alpha x_1,0) = \alpha(x_1,0) \]
+\[ = \alpha T(X) \]
+All the conditions are satisfied. Hence T is a linear operator. 
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{12. Show that a discrete metric space is complete.}}
+Discrete metric $\rho$ on a set X is defined by,\\
+\[
+	\rho(x,y)=
+	\begin{cases}
+		1 & \text{if} x \neq y\\
+		0 & \text{if} x = y
+	\end{cases}
+\]
+for any x,y $\in X$. Here $(X,\rho)$ is a disrete metric space.\\
+A sequence $x_1$,$x_2$,$x_3$$\ldots$ is called a Caushy`s sequence if\\ 
+$\forall \epsilon>0$ \tab{$\exists N |$  $\forall m,n>N$ $d(x_m,x_n)<\epsilon$}
+
+Take $\epsilon$=$\frac{1}{2}$.\\
+Then $\exists N$ $\colon$ $\forall m,n>N$ $d(x_m,x_n)<\frac{1}{2}$\\
+But possible values of d are \{0,1\}. Since distance cannot exceed $\frac{1}{2}$, $d(x_m,x_n)$ should be zero.
+\[ \Longrightarrow d(x_m,x_n) = 0 \forall m,n>N \]
+\[ \Longrightarrow x_n = x_m \]
+Thus \{$x_n$\} $\longrightarrow x $ $\forall n>N$. This means every Caushy`s sequence converges in X. So discrete metric space is complete. 
+\end{homeworkSection}
+
+\begin{homeworkSection}{\textbf{13. Descibe Weistrass appoximation theorem.}}
+\textbf{Theorem$\colon$} if \textit{f} is a continuous real valued function on \textit{[a,b]} and if any $\epsilon > 0$ is given, then there exists a polynomial \textit{p} on \textit{[a,b]} such that 
+\[ |f(x)-p(x)| < \epsilon \]
+for all x in [a,b]. In words, any continuous function on a closed and bounded interval can be uniformly approximated on that interval by polynomials to any degree of accuracy\cite{weistrass}.\\
+
+Because polynomials are among the simplest functions, and because computers can directly evaluate polynomials, this theorem has both practical and theoretical relevance, especially in polynomial interpolation\cite{wiki}.As a consequence of the Weierstrass approximation theorem, one can show that the space $C[a,b]$ is separable$\colon$ the polynomial functions are dense, and each polynomial function can be uniformly approximated by one with rational coefficients; there are only countably many polynomials with rational coefficients. 
+
+\end{homeworkSection}
+
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{thebibliography}{9}
+
+\bibitem{weistrass}
+  Weisstein, Eric W. ''Weierstrass Approximation Theorem.'' From MathWorld--A Wolfram Web Resource. \emph{http://mathworld.wolfram.com/WeierstrassApproximationTheorem.html}
+
+\bibitem{wiki}
+  Stone-Weierstrass theorem, \emph{http://en.wikipedia.org/wiki/Stone-Weierstrass\_theorem}
+
+\end{thebibliography}
+
+
+\end{document}
