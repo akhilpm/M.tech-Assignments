@@ -1,0 +1,27 @@
+General form of equation: m*s^2 + b*s +k = 0
+
+1.	overdamping(b^2 > 4*m*k)
+ 	eg: r^2 + 4*r + 3 = 0 
+ 	solution general form :c1*exp(-t) + c2*exp(-3t) 
+ 	/* give c1 1.5, c2= -0.5 */
+
+ 	>>f=inline('1.5*exp(-t)-0.5*exp(-3*t)')
+
+	>>fplot(f,[0, 20])
+
+2.  underdamping(b^2 < 4*m*k)
+	eg:	r^2 + r + 1 = 0
+	solution: exp(-1/2*t)*(c1*sin(1/2*3^(1/2)*t) + c2*cos(1/2*3^(1/2)*t))
+	/* give c1 = c2 =1 */
+
+	>>f = inline('exp(-1/2*t)*(sin(1/2*3^(1/2)*t)+cos(1/2*3^(1/2)*t))')
+
+	>>fplot(f,[-1, 20])
+
+3.	Critical Damping(b^2 = 4*m*k)
+	eg: r^2 + 4*r + 4 = 0
+	solution general form: exp(-2t)(c1 + c2t)
+	/* give c1 = 1 c2 =2 */
+
+	>>f=inline('exp(-2*t)*(1+2*t)')	 		 	
+	>>fplot(f,[0, 8])
